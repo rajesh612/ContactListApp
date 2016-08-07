@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactsApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacts App</title>
+    <link href="public/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div ng-include="'/modules/core/client/views/navigation.core.tpl.html'"></div>
+<div ui-view><h1>This is server side controller</h1></div> <!-- route will place the template-->
+<!--Vender dependencies-->
+<script src="public/lib/angular/angular.min.js"></script>
+<script src="public/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+<!-- Application Dependencies-->
+<script src="modules/core/client/app/config.js"></script>
+<script src="modules/core/client/app/init.js"></script>
+<!--<script src = 'modules/core/client/core.client.module.js'></script>-->
+<script src="modules/core/client/routes/core.client.route.js"></script>
+<script src = 'modules/core/client/controllers/core.client.controller.js'></script>
+<script src = 'modules/core/client/services/core.client.service.js'></script>
+
+
+</body>
+</html>

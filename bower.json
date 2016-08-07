@@ -1,0 +1,27 @@
+{
+  "name": "contacts-app",
+  "description": "Contact application",
+  "main": "server.js",
+  "authors": [
+    "rajesh612 <rajesh.bommakuri@gmail.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "nodejs",
+    "contacts"
+  ],
+  "homepage": "https://github.com/kukuruznik04/contacts-app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.6",
+    "angular-ui-router": "^0.3.1"
+  }
+}
