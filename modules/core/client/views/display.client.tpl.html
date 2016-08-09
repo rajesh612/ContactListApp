@@ -3,7 +3,7 @@
     <table class="table">
         <thead>
         <tr>
-            <th ng-repeat="field in fields" ng-bind="field"></th>
+            <th ng-repeat="field in fields" ng-bind="field | labelCase"></th>
             <th>Action</th>
         </tr>
         </thead>
@@ -15,4 +15,5 @@
         </tr>
         </tbody>
     </table>
+    <!--<contact-form  name="contacts"></contact-form>-->   <!-- To get custom directive-->
 </div>

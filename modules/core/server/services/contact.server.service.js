@@ -78,7 +78,7 @@ module.exports.getContactByNum = function (num,callback) {
         } else {
             console.log(contacts);
             for(var i=0; i< contacts.length;i++){
-                newObj = {firstname:contacts[i].firstname,telephone: contacts[i].telephone};
+                newObj = {firstName:contacts[i].firstName,telephone: contacts[i].telephone};
                 foundContacts.push(newObj);
             }
             callback(null,foundContacts);
@@ -88,7 +88,7 @@ module.exports.getContactByNum = function (num,callback) {
 
 module.exports.getTopContacts = function (callback) {
     var newObj,foundContacts=[];
-    Contact.find({}).limit(10).sort('firstname').exec(function (err,contacts) {
+    Contact.find({}).limit(10).sort('firstName').exec(function (err,contacts) {
         if(err){
             callback(err);
         }else{

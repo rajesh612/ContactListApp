@@ -8,10 +8,13 @@ angular
        .module('ContactsApp')
           .config(function ($stateProvider) {   //angular-ui-route
               $stateProvider
-                  .state('Log In',{
+                  .state('logIn',{
                       url:'/logIn',
-                      templateUrl: 'modules/core/client/views/logIn.client.tpl.html',
-                      controller: 'ContactsCtrl'
+                      templateUrl: 'modules/core/client/views/logIn.client.tpl.html'
+                  })
+                  .state('register',{
+                      url:'/register',
+                      templateUrl: 'modules/core/client/views/register.client.tpl.html'
                   })
                   .state('display',{
                       url:'/display',

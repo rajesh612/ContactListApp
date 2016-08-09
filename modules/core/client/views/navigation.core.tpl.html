@@ -1,3 +1,4 @@
+<div ng-controller="logInCtrl">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -7,10 +8,15 @@
             <a href="#" class="navbar-brand">Contacts App</a></div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ui-sref-active="active"><a ui-sref="Log In"></a></li>
-                <li ui-sref-active="active"><a ui-sref="display">Display</a></li>
-                <li ui-sref-active="active"><a ui-sref="create">Create</a></li>
+                <li ui-sref-active="active" ng-hide="hideSign"><a ui-sref="register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                <li ui-sref-active="active" ng-hide="hideSign"><a ui-sref="logIn"><span class="glyphicon glyphicon-log-in"></span> Log In</a></li>
+                <li ui-sref-active="active" ng-show="showUser"><a ui-sref="display">Display</a></li>
+                <li ui-sref-active="active" ng-show="showUser"><a ui-sref="create">Create</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" ng-bind="welcome"></a></li>
             </ul>
         </div>
     </div>
 </nav>
+</div>

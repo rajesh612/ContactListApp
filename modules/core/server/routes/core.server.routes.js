@@ -3,6 +3,7 @@
 module.exports = function(app){
 
     var controller = require('../controllers/core.server.controller'),
+        userController = require('../controllers/user.server.controller'),
         mainController = require('../controllers/main.server.controller');
 
     app
@@ -25,14 +26,9 @@ module.exports = function(app){
     app.param ('contactId', controller.validateContactIdAndForward)
 
     app
-        .route('/api/city/:city')
-        .get(controller.findContactByCity);
-
+        .route('/api/user/:userName/:password')
+        .get(userController.findUser);
     app
-        .route('/api/areacode/:num')
-        .get(controller.getContactByNum);
-
-    app
-        .route('/api/topcontacts')
-        .get(controller.getTopContacts);
+        .route('/api/user')
+        .post(userController.createUser);
 }

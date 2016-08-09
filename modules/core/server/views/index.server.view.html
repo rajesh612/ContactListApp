@@ -7,7 +7,7 @@
 </head>
 <body>
 <div ng-include="'/modules/core/client/views/navigation.core.tpl.html'"></div>
-<div ui-view><h1>This is server side controller</h1></div> <!-- route will place the template-->
+<div ui-view><h2 style="text-decoration-color: #7a43b6">&nbsp;Welcome to Contacts App !!</h2></div> <!-- route will place the template-->
 <!--Vender dependencies-->
 <script src="public/lib/angular/angular.min.js"></script>
 <script src="public/lib/angular-ui-router/release/angular-ui-router.min.js"></script>
@@ -19,7 +19,11 @@
 <script src="modules/core/client/routes/core.client.route.js"></script>
 <script src = 'modules/core/client/controllers/core.client.controller.js'></script>
 <script src = 'modules/core/client/services/core.client.service.js'></script>
+<script src = 'modules/core/client/filters/core.client.filter.js'></script>
 
+<!--User Dependencies-->
+<script src = 'modules/core/client/controllers/core.client.registerController.js'></script>
+<script src = 'modules/core/client/services/core.client.registerService.js'></script>
 
 </body>
 </html>
