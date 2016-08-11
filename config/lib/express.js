@@ -2,7 +2,7 @@
 
 var express = require('express'),
     bodyParser = require('body-parser'),
-    consolidate = require('consolidate'),
+    consolidate = require('consolidate'), // Added for Authentication
     swig = require('swig'),
     path = require('path'),
     config = require('../config');   // third party library
@@ -10,9 +10,8 @@ var express = require('express'),
 module.exports.init = function() // module.exports creates interface
 {
     var app = express();
-
-    // body parser middleware integration
-    this.initBodyParser(app);
+    
+    this.initBodyParser(app);    // body parser middleware integration
     this.initViewEngine(app);
     this.ignoreStaticRoutes(app);
     return app;

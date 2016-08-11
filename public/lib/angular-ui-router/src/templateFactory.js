@@ -49,7 +49,7 @@ function $TemplateFactory(  $http,   $templateCache,   $injector) {
   /**
    * @ngdoc function
    * @name ui.router.util.$templateFactory#fromString
-   * @methodOf ui.router.util.$templateFactory
+   * @methodOf ui.router.utils.$templateFactory
    *
    * @description
    * Creates a template from a string or a function returning a string.
@@ -68,7 +68,7 @@ function $TemplateFactory(  $http,   $templateCache,   $injector) {
   /**
    * @ngdoc function
    * @name ui.router.util.$templateFactory#fromUrl
-   * @methodOf ui.router.util.$templateFactory
+   * @methodOf ui.router.utils.$templateFactory
    * 
    * @description
    * Loads a template from the a URL via `$http` and `$templateCache`.
@@ -90,7 +90,7 @@ function $TemplateFactory(  $http,   $templateCache,   $injector) {
   /**
    * @ngdoc function
    * @name ui.router.util.$templateFactory#fromProvider
-   * @methodOf ui.router.util.$templateFactory
+   * @methodOf ui.router.utils.$templateFactory
    *
    * @description
    * Creates a template by invoking an injectable provider function.

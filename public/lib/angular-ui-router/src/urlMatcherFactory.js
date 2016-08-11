@@ -176,8 +176,8 @@ function UrlMatcher(pattern, config, parentMatcher) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:UrlMatcher#concat
- * @methodOf ui.router.util.type:UrlMatcher
+ * @name ui.router.utils.type:UrlMatcher#concat
+ * @methodOf ui.router.utils.type:UrlMatcher
  *
  * @description
  * Returns a new matcher for a pattern constructed by appending the path part and adding the
@@ -214,8 +214,8 @@ UrlMatcher.prototype.toString = function () {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:UrlMatcher#exec
- * @methodOf ui.router.util.type:UrlMatcher
+ * @name ui.router.utils.type:UrlMatcher#exec
+ * @methodOf ui.router.utils.type:UrlMatcher
  *
  * @description
  * Tests the specified path against this matcher, and returns an object containing the captured
@@ -286,8 +286,8 @@ UrlMatcher.prototype.exec = function (path, searchParams) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:UrlMatcher#parameters
- * @methodOf ui.router.util.type:UrlMatcher
+ * @name ui.router.utils.type:UrlMatcher#parameters
+ * @methodOf ui.router.utils.type:UrlMatcher
  *
  * @description
  * Returns the names of all path and search parameters of this pattern in an unspecified order.
@@ -302,8 +302,8 @@ UrlMatcher.prototype.parameters = function (param) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:UrlMatcher#validates
- * @methodOf ui.router.util.type:UrlMatcher
+ * @name ui.router.utils.type:UrlMatcher#validates
+ * @methodOf ui.router.utils.type:UrlMatcher
  *
  * @description
  * Checks an object hash of parameters to validate their correctness according to the parameter
@@ -318,8 +318,8 @@ UrlMatcher.prototype.validates = function (params) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:UrlMatcher#format
- * @methodOf ui.router.util.type:UrlMatcher
+ * @name ui.router.utils.type:UrlMatcher#format
+ * @methodOf ui.router.utils.type:UrlMatcher
  *
  * @description
  * Creates a URL that matches this pattern by substituting the specified values
@@ -423,8 +423,8 @@ function Type(config) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:Type#is
- * @methodOf ui.router.util.type:Type
+ * @name ui.router.utils.type:Type#is
+ * @methodOf ui.router.utils.type:Type
  *
  * @description
  * Detects whether a value is of a particular type. Accepts a native (decoded) value
@@ -432,7 +432,7 @@ function Type(config) {
  *
  * @param {*} val  The value to check.
  * @param {string} key  Optional. If the type check is happening in the context of a specific
- *        {@link ui.router.util.type:UrlMatcher `UrlMatcher`} object, this is the name of the
+ *        {@link ui.router.utils.type:UrlMatcher `UrlMatcher`} object, this is the name of the
  *        parameter in which `val` is stored. Can be used for meta-programming of `Type` objects.
  * @returns {Boolean}  Returns `true` if the value matches the type, otherwise `false`.
  */
@@ -442,8 +442,8 @@ Type.prototype.is = function(val, key) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:Type#encode
- * @methodOf ui.router.util.type:Type
+ * @name ui.router.utils.type:Type#encode
+ * @methodOf ui.router.utils.type:Type
  *
  * @description
  * Encodes a custom/native type value to a string that can be embedded in a URL. Note that the
@@ -461,8 +461,8 @@ Type.prototype.encode = function(val, key) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:Type#decode
- * @methodOf ui.router.util.type:Type
+ * @name ui.router.utils.type:Type#decode
+ * @methodOf ui.router.utils.type:Type
  *
  * @description
  * Converts a parameter value (from URL string or transition param) to a custom/native value.
@@ -478,8 +478,8 @@ Type.prototype.decode = function(val, key) {
 
 /**
  * @ngdoc function
- * @name ui.router.util.type:Type#equals
- * @methodOf ui.router.util.type:Type
+ * @name ui.router.utils.type:Type#equals
+ * @methodOf ui.router.utils.type:Type
  *
  * @description
  * Determines whether two decoded values are equivalent.
@@ -676,7 +676,7 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#caseInsensitive
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
    * Defines whether URL matching should be case sensitive (the default behavior), or not.
@@ -693,7 +693,7 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#strictMode
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
    * Defines whether URLs should match trailing slashes, or not (the default behavior).
@@ -710,7 +710,7 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#defaultSquashPolicy
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
    * Sets the default behavior when generating or matching URLs with default parameter values.
@@ -733,10 +733,10 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#compile
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
-   * Creates a {@link ui.router.util.type:UrlMatcher `UrlMatcher`} for the specified pattern.
+   * Creates a {@link ui.router.utils.type:UrlMatcher `UrlMatcher`} for the specified pattern.
    *
    * @param {string} pattern  The URL pattern.
    * @param {Object} config  The config object hash.
@@ -749,7 +749,7 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#isMatcher
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
    * Returns true if the specified object is a `UrlMatcher`, or false otherwise.
@@ -773,18 +773,18 @@ function $UrlMatcherFactory() {
   /**
    * @ngdoc function
    * @name ui.router.util.$urlMatcherFactory#type
-   * @methodOf ui.router.util.$urlMatcherFactory
+   * @methodOf ui.router.utils.$urlMatcherFactory
    *
    * @description
-   * Registers a custom {@link ui.router.util.type:Type `Type`} object that can be used to
+   * Registers a custom {@link ui.router.utils.type:Type `Type`} object that can be used to
    * generate URLs with typed parameters.
    *
    * @param {string} name  The type name.
    * @param {Object|Function} definition   The type definition. See
-   *        {@link ui.router.util.type:Type `Type`} for information on the values accepted.
+   *        {@link ui.router.utils.type:Type `Type`} for information on the values accepted.
    * @param {Object|Function} definitionFn (optional) A function that is injected before the app
    *        runtime starts.  The result of this function is merged into the existing `definition`.
-   *        See {@link ui.router.util.type:Type `Type`} for information on the values accepted.
+   *        See {@link ui.router.utils.type:Type `Type`} for information on the values accepted.
    *
    * @returns {Object}  Returns `$urlMatcherFactoryProvider`.
    *

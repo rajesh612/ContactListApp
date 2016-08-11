@@ -28,11 +28,12 @@ angular
             $state.go('edit',{contactId: contact._id});
         }
         //delete contacts
-        $scope.deleteContact = function (id) {
-            var deletePromise = ContactService._deleteContact(id);
+        $scope.deleteContact = function (contact) {
+            var deletePromise = ContactService._deleteContact(contact._id);
 
             var successCallBack = function (response) {
                 $scope.message = response;
+                refresh();
             };
 
             var failureCallBack = function (err) {
@@ -41,7 +42,6 @@ angular
             deletePromise
                 .success(successCallBack)
                 .error(failureCallBack);
-            refresh();
         }
     }])
     .controller('saveCtrl',['$scope','ContactService' ,function($scope,ContactService){

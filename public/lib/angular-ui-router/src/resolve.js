@@ -22,7 +22,7 @@ function $Resolve(  $q,    $injector) {
   /**
    * @ngdoc function
    * @name ui.router.util.$resolve#study
-   * @methodOf ui.router.util.$resolve
+   * @methodOf ui.router.utils.$resolve
    *
    * @description
    * Studies a set of invocables that are likely to be used multiple times.
@@ -185,7 +185,7 @@ function $Resolve(  $q,    $injector) {
   /**
    * @ngdoc function
    * @name ui.router.util.$resolve#resolve
-   * @methodOf ui.router.util.$resolve
+   * @methodOf ui.router.utils.$resolve
    *
    * @description
    * Resolves a set of invocables. An invocable is a function to be invoked via 

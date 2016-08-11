@@ -18,12 +18,16 @@ module.exports.saveUser = function(savableUser, callback){
 }
 
 module.exports.findUser= function (userName,pass,callback) {
-    User.find({userName: userName, password : pass},function (err,users) {
+    User.findOne({userName: userName, password : pass},function (err,user) {
         if(err){
             callback(err);
-        } else {
-            callback(null,users[0]);
-            }
+        }
+        if(!user){
+            callback(false,null);
+            }else{
+            callback(null,user);
+        }
+
     });
 }
 

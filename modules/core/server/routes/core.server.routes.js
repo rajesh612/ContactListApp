@@ -26,9 +26,9 @@ module.exports = function(app){
     app.param ('contactId', controller.validateContactIdAndForward)
 
     app
-        .route('/api/user/:userName/:password')
-        .get(userController.findUser);
+        .route('/api/login')
+        .post(userController.findUser);
     app
-        .route('/api/user')
+        .route('/api/register')
         .post(userController.createUser);
 }

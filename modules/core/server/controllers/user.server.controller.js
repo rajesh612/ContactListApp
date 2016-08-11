@@ -23,8 +23,8 @@ module.exports.createUser = function (req, res) {
 }
 
 module.exports.findUser = function (req,res) {
-    var userName = req.params.userName,
-        pass = req.params.password;
+    var userName = req.body.userName,
+        pass = req.body.password;
     userService.findUser(userName,pass,function (err,foundUser) {
         console.log(foundUser);
         if (err || !foundUser) {

@@ -20,18 +20,17 @@ var UserSchema = new Schema({
     },
     userName:{
         type: String,
-        default: '',
-        trim: true,
+        index:{unique: true},
         validate:[validateFieldStrategy, 'Username cannot be empty']
     },
     password:{
         type: String,
-        default: '',
-        trim: true,
+        required: true,
         validate:[validateFieldStrategy, 'Password cannot be empty']
     }
 });
 
-var User = mongoose.model('RajeshUsers', UserSchema);  //register collection for mongodb
 
-module.exports = User;
+module.exports = mongoose.model('RajeshUsers', UserSchema);  //register collection for mongodb
+
+// module.exports = User;

@@ -373,7 +373,7 @@ function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
        *
        * @description
        * A URL generation method that returns the compiled URL for a given
-       * {@link ui.router.util.type:UrlMatcher `UrlMatcher`}, populated with the provided parameters.
+       * {@link ui.router.utils.type:UrlMatcher `UrlMatcher`}, populated with the provided parameters.
        *
        * @example
        * <pre>
