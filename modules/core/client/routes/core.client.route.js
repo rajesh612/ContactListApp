@@ -23,7 +23,7 @@ angular
                   })
                   .state('create',{
                       url:'/create',
-                      templateUrl: 'modules/core/client/views/create.client.tpl.html',
+                      templateUrl: 'modules/core/client/views/create.client.tpl.html'
                   })
                   .state('edit',{
                       url:'/edit/:contactId',
@@ -34,5 +34,9 @@ angular
                           }
                       },
                       controller: 'editCtrl'
+                  })
+                  .state('logOut',{
+                      url:'/logOut',
+                      controller: 'logOutCtrl'
                   })
           });

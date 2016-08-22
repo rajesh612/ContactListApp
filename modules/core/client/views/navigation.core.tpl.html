@@ -14,7 +14,8 @@
                 <li ui-sref-active="active" ng-show="showUser"><a ui-sref="create">Create</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#" ng-bind="welcome"></a></li>
+                <li ng-show="showUser"><a href="#" ng-bind="welcome"></a></li>
+                <li ui-sref-active="active" ng-show="showUser"><a ui-sref="logOut">Log Out</a></li>
             </ul>
         </div>
     </div>

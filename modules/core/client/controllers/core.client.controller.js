@@ -6,6 +6,15 @@
 angular
     .module('ContactsApp')
     .controller('ContactsCtrl',['$scope','ContactService','$state',function($scope, ContactService,$state){
+        $scope.pageSize = 5;
+        $scope.currentPage = 1;
+        
+        // To sort contacts
+        $scope.sortContacts = function(keyname){
+            $scope.sortKey = keyname;   //set the sortKey to the param passed
+            $scope.sortSign = !$scope.sortSign; //if true make it false and vice versa
+        };
+
         // Get all contacts
         var refresh = function () {
             var contactsPromise = ContactService._getContacts();
@@ -17,7 +26,7 @@ angular
 
             var failureCallBack = function (err) {
                 console.log("Error while Fetching contacts"+ err);
-            }
+            };
             contactsPromise
                 .success(successCallBack)
                 .error(failureCallBack);
@@ -26,7 +35,7 @@ angular
         // redirect to edit template
         $scope.editContact = function (contact) {
             $state.go('edit',{contactId: contact._id});
-        }
+        };
         //delete contacts
         $scope.deleteContact = function (contact) {
             var deletePromise = ContactService._deleteContact(contact._id);
@@ -56,7 +65,7 @@ angular
 
             var failureCallBack = function (err) {
                 $scope.message = err;
-            }
+            };
             savePromise
                 .success(successCallBack)
                 .error(failureCallBack);
@@ -71,7 +80,7 @@ angular
 
         var failureCallBack = function (err) {
             $scope.message = err;
-        }
+        };
         editPromise
             .success(successCallBack)
             .error(failureCallBack);
@@ -88,10 +97,10 @@ angular
             var failureCallBack = function (err) {
                 console.log(err);
                 $state.go('edit');
-            }
+            };
             updatePromise
                 .success(successCallBack)
                 .error(failureCallBack);
         }
-    }])
+    }]);
    

@@ -16,13 +16,16 @@ angular
 
             var failureCallBack = function (err) {
                 $scope.message = err;
-            }
+            };
             savePromise
                 .success(successCallBack)
                 .error(failureCallBack);
         }
     }])
     .controller('logInCtrl',['$scope','UserService','$rootScope','$state',function($scope, UserService,$rootScope,$state){
+        $rootScope.hideSign = false;
+        $scope.hideLogIn = false;
+        $rootScope.showUser = false;
         //Log In user
         $scope.signIn = function(user) {
             var userPromise = UserService._findUser(user);
@@ -36,9 +39,12 @@ angular
 
             var failureCallBack = function (err) {
                 $scope.msg = err;
-            }
+            };
             userPromise
                 .success(successCallBack)
                 .error(failureCallBack);
         }
     }])
+    .controller('logOutCtrl',['$window',function($window){
+        $window.location.replace('http://localhost:8090/');
+    }]);

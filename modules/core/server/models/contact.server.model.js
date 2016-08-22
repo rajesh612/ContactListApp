@@ -6,32 +6,21 @@ var mongoose = require('mongoose'),
 
 var validateFieldStrategy = function(property){
     return property.length;
-}
+};
 
 var validateEmailStartegy = function(property){
     return validator.isEmail(property);
-}
+};
 
 var ContactSchema = new Schema({
-    firstName:{
+
+    city:{
         type: String,
         default: '',
         trim: true,
-        validate:[validateFieldStrategy, 'Firstname cannot be empty']
-    },
-    lastName:{
-        type: String,
-        default: '',
-        trim: true,
-        validate:[validateFieldStrategy, 'Lastname cannot be empty']
-    },
-    email:{
-        type: String,
-        default: '',
-        trim: true,
-        unique:true,
+        unique:false,
         lowercase:true,
-        validate:[validateEmailStartegy, 'Email is not valid']
+        validate:[validateFieldStrategy, 'city cannot be empty']
     },
     telephone:{
         type: String,
@@ -41,14 +30,27 @@ var ContactSchema = new Schema({
         lowercase:true,
         validate:[validateFieldStrategy, 'Mobile number cannot be empty']
     },
-    city:{
+    email:{
         type: String,
         default: '',
         trim: true,
-        unique:false,
+        unique:true,
         lowercase:true,
-        validate:[validateFieldStrategy, 'city cannot be empty']
+        validate:[validateEmailStartegy, 'Email is not valid']
+    },
+    lastName:{
+        type: String,
+        default: '',
+        trim: true,
+        validate:[validateFieldStrategy, 'Lastname cannot be empty']
+    },
+    firstName:{
+        type: String,
+        default: '',
+        trim: true,
+        validate:[validateFieldStrategy, 'Firstname cannot be empty']
     }
+
 });
 
 var Contact = mongoose.model('RajeshContacts', ContactSchema);  //register collection for mongodb
